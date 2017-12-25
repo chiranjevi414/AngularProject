@@ -7,6 +7,16 @@
 
 <button (click)= "onClick()">Click ME</button>
 <h1>Hobbies</h1>
+
+<form (submit)="addHobby(hobby.value)">
+    <div>
+      <label for="hobby">Hobby:</label>
+      <input type="text" #hobby>
+    </div>
+</form>
+
   <ul>
-    <li *ngFor="let x of hobbies; let i =index">{{i+1}}: {{x}}</li>
+    <li *ngFor="let hobby of hobbies; let i =index">
+      {{i+1}}: {{hobby}} <button (click)="deleteHobby(hobby)">X</button>
+    </li>
   </ul>

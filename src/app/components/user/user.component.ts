@@ -35,6 +35,22 @@ export class UserComponent implements OnInit {
     this.name = "Chiran";
     this.hobbies.push('Cricket');
   }
+
+  addHobby(hobby){
+    console.log(hobby);
+    this.hobbies.unshift(hobby);
+    return false;
+  }
+
+  deleteHobby(hobby){
+    console.log(hobby);
+    for(let i=0; i<this.hobbies.length; i++){
+      if(this.hobbies[i] == hobby){
+        this.hobbies.splice(i, 1);
+      }
+    }
+    
+  }
 }
 
 interface Address{
